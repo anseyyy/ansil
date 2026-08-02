@@ -166,13 +166,6 @@ function Header() {
                     {/* Column 4: Contact Action Button */}
                     <div className="hidden sm:flex items-center justify-end h-full">
                         <a href="#contact" className="flex items-center h-10 overflow-hidden cursor-pointer group select-none">
-                            {/* Avatar */}
-                            <img
-                                src="/images/ansilheaderimage.png"
-                                alt="Ansil Profile"
-                                className="h-10 w-10 object-cover border border-r-0 border-white/10"
-                            />
-                            
                             {/* Left Arrow Box (slides in on hover) */}
                             <div className="h-full w-0 group-hover:w-10 opacity-0 group-hover:opacity-100 bg-[#ff4b36] text-white flex items-center justify-center transition-all duration-300 ease-in-out overflow-hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3.5 h-3.5 flex-shrink-0">
