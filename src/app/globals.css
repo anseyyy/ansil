@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +12,98 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility container-padding-x {
+  padding-left: clamp(16px, 2vw + 10px, 50px);
+  padding-right: clamp(16px, 2vw + 10px, 50px);
+}
+
+@media (min-width: 640px) {
+  .container-padding-x {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-padding-x {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-padding-x {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-padding-x {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* Forceful banner fixes for padding and full-viewport height when needed */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+.site-banner {
+  box-sizing: border-box !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+
+.site-banner .banner-media {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Grain / noise overlay applied site-wide */
+:root {
+  --grain-opacity: 0.075;
+  /* tweak this value between 0 and 0.2 */
+}
+
+/* body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999; */
+  /* Premium SVG-based fractal noise overlay for high quality grain texture */
+  /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: var(--grain-opacity);
+} */
+
+/* Utility class to disable grain if needed */
+.no-grain::after {
+  display: none !important;
+}
+
+/* If you prefer an image-based noise layer (higher quality), place a small noise PNG in /public/images/noise.png
+   and replace the background-image above with: url('/images/noise.png'); then adjust `opacity`. */
+
+/* Hide default browser scrollbar globally while maintaining scroll functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
