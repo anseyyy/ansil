@@ -56,9 +56,9 @@ export default function AboutHero() {
 
                         <div className="flex flex-col gap-4 mt-6 border-t border-white/10 pt-6">
                             {[
-                                { id: 'counter-years', value: '1.3+', label: 'Years Experience' },
-                                { id: 'counter-projects', value: '13+', label: 'Projects Shipped' },
-                                { id: 'counter-clients', value: '3+', label: 'Happy Clients' },
+                                { id: 'counter-years', value: '1.4+', label: 'Years Experience' },
+                                { id: 'counter-projects', value: '8+', label: 'Projects Shipped' },
+                                { id: 'counter-clients', value: '4+', label: 'Happy Clients' },
                             ].map(({ id, value, label }) => (
                                 <div key={id} className="flex flex-col">
                                     <span id={id} className="text-3xl font-black text-white tracking-tighter">{value}</span>
