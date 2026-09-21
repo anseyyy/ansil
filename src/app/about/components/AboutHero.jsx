@@ -2,23 +2,24 @@
 import React, { useEffect } from 'react'
 import GridLines from '../../../components/common/grid/GridLines'
 
+const counters = [
+    { id: 'counter-years', value: 1.4, label: 'Years Experience' },
+    { id: 'counter-projects', value: 8, label: 'Projects Shipped' },
+    { id: 'counter-clients', value: 4, label: 'Happy Clients' },
+]
+
 export default function AboutHero() {
 
     useEffect(() => {
-        const targets = [
-            { id: 'counter-years', end: 3, suffix: '+' },
-            { id: 'counter-projects', end: 20, suffix: '+' },
-            { id: 'counter-clients', end: 10, suffix: '+' },
-        ]
-        targets.forEach(({ id, end, suffix }) => {
+        counters.forEach(({ id, value }) => {
             const el = document.getElementById(id)
             if (!el) return
             let count = 0
-            const step = Math.ceil(end / 40)
+            const step = value / 40
             const timer = setInterval(() => {
-                count = Math.min(count + step, end)
-                el.textContent = count + suffix
-                if (count >= end) clearInterval(timer)
+                count = Math.min(count + step, value)
+                el.textContent = `${Number(count.toFixed(1))}+`
+                if (count >= value) clearInterval(timer)
             }, 30)
         })
     }, [])
@@ -55,13 +56,9 @@ export default function AboutHero() {
                         </div>
 
                         <div className="flex flex-col gap-4 mt-6 border-t border-white/10 pt-6">
-                            {[
-                                { id: 'counter-years', value: '1.4+', label: 'Years Experience' },
-                                { id: 'counter-projects', value: '8+', label: 'Projects Shipped' },
-                                { id: 'counter-clients', value: '4+', label: 'Happy Clients' },
-                            ].map(({ id, value, label }) => (
+                            {counters.map(({ id, value, label }) => (
                                 <div key={id} className="flex flex-col">
-                                    <span id={id} className="text-3xl font-black text-white tracking-tighter">{value}</span>
+                                    <span id={id} className="text-3xl font-black text-white tracking-tighter">{value}+</span>
                                     <span className="text-[9px] font-bold uppercase tracking-widest text-white/30 mt-1">{label}</span>
                                 </div>
                             ))}
