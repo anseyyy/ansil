@@ -12,7 +12,7 @@ export default function ProjectsPage() {
 
             {/* Giant background text: PROJECTS */}
             <div className="absolute top-8 pt-20 left-9 right-0 pointer-events-none select-none z-0 overflow-hidden">
-                <h1 className="text-[14vw] font-black uppercase text-white/[0.015] tracking-tighter leading-none whitespace-nowrap">
+                <h1 className="text-[14vw] font-black uppercase text-white/1.5 tracking-tighter leading-none whitespace-nowrap">
                     Projects
                 </h1>
             </div>
