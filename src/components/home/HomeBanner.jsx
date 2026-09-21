@@ -6,6 +6,7 @@ function HomeBanner() {
         <div>
             <Banner
                 bgVideo="/videos/homevideo.mp4"
+                bgVideoMobile="/videos/homevideomobile.mp4"
                 fullHeight={false}
                 style={{ minHeight: 'clamp(60vh, 85vw, 100vh)', height: 'clamp(60vh, 85vw, 100vh)' }}
             >

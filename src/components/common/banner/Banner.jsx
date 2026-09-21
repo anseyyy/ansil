@@ -6,6 +6,7 @@ import GridLines from '../grid/GridLines'
  * Props:
  * - bgImage: string (path to background image in /public)
  * - bgVideo: string (path to background video in /public)
+ * - bgVideoMobile: string (optional mobile-only video path in /public)
  * - className: additional container classes
  * - children: up to 4 child nodes which will be placed into 4 grid sections
  *
@@ -20,6 +21,7 @@ import GridLines from '../grid/GridLines'
 function Banner({
     bgImage,
     bgVideo,
+    bgVideoMobile,
     children,
     className = '',
     style,
@@ -56,7 +58,7 @@ function Banner({
             {/* Background video (falls back to image if provided) */}
             {bgVideo && (
                 <video
-                    className="banner-media"
+                    className={`banner-media ${bgVideoMobile ? 'hidden md:block' : ''}`}
                     autoPlay
                     muted
                     loop
@@ -66,6 +68,21 @@ function Banner({
                 >
                     <source src={bgVideo} type="video/mp4" />
                     {/* Fallback text for very old browsers */}
+                    Your browser does not support the video tag.
+                </video>
+            )}
+
+            {bgVideoMobile && (
+                <video
+                    className="banner-media block md:hidden"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    aria-hidden="true"
+                >
+                    <source src={bgVideoMobile} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             )}
