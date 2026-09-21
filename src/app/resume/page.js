@@ -93,7 +93,7 @@ export default function ResumePage() {
                             <div className="flex flex-col gap-6">
                                 <div>
                                     <h4 className="text-xs font-black uppercase tracking-wider text-white">Full Stack Developer</h4>
-                                    <p className="text-[9px] text-[#ff4b36] uppercase tracking-widest font-mono font-bold mt-0.5">Feb 2026 — Present / Confidential Company</p>
+                                    <p className="text-[9px] text-[#ff4b36] uppercase tracking-widest font-mono font-bold mt-0.5">Feb 2026 — Present / Phew Interactive</p>
                                     <ul className="text-[10px] text-white/60 lowercase font-medium tracking-wide mt-2.5 flex flex-col gap-1.5 list-disc pl-3">
                                         <li>built custom HRMS & OMS ERP applications used company-wide by all employees.</li>
                                         <li>learned and applied Next.js, React, and modern Tailwind CSS to construct high-performance frontends.</li>
